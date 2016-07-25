@@ -1,0 +1,16 @@
+/* Buttons and Inputs */
+
+
+
+.btn-default {
+	background: $primary-blue;
+	color:#fff;
+	border-radius:$default-padding/3;
+	border: 1px solid;
+	padding:$default-padding/2;
+	border-color:darken($primary-blue, 5%);
+	@include transition(color .500ms ease);
+	&:hover {
+		background:darken($primary-blue, 5%);
+	}
+}
