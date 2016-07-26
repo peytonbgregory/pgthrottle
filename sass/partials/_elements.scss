@@ -9,7 +9,8 @@
 	border: 1px solid;
 	padding:$default-padding/2;
 	border-color:darken($primary-blue, 5%);
-	@include transition(color .500ms ease);
+	display:inline-block;
+	@include transition(500ms ease);
 	&:hover {
 		background:darken($primary-blue, 5%);
 	}
