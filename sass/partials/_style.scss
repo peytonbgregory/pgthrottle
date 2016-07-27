@@ -125,6 +125,9 @@ header, footer, section {
 .main-logo-link img {
 	max-width: 270px;
  margin-top:$default-margin;
+ @media screen and (max-width: 768px) {
+ margin:$default-margin auto;
+}
 }
 #social-media {
  margin:$default-margin/3 0;
