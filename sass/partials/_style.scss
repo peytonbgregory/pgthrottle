@@ -152,14 +152,20 @@ header, footer, section {
 }
 /* Navigation */
 .nav > li > a {
-	color: #fff;
-	font-size: 1.4em;
-	font-weight: 200;
- font-family:$primary-header;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:200;
+	font-family:$primary-header;
+	@media screen and (max-width: 1199px) {
+	padding: 10px $default-padding/2;
+	}
 }
 .navbar-nav {
-	float: right;
-	margin: 0;
+    float: none;
+    margin: 0;
+	display:flex;
+	justify-content:space-between;
+	
 }
 .navbar-collapse {
 	padding-right: 0;
