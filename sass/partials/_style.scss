@@ -1,3 +1,4 @@
+
 /* General */
 
 
@@ -7,129 +8,98 @@
 }
 }
 body {
-	font-family:$primary-font;
-	color:$primary-color;
-	font-size:$font-size;
-	font-weight:400;
-	background:#fff;
-	line-height:1.4em;
+ font-family:$primary-font;
+ color:$primary-color;
+ font-size:$font-size;
+	font-weight: 400;
+	background: #fff;
+	line-height: 1.4em;
 }
-
 a {
-	text-decoration:none;
-	color:$primary-blue;
-	@include transition(500ms ease);
-		&:hover {
-
-			text-decoration:none;
-		}
+	text-decoration: none;
+ color:$primary-blue;
+ @include transition(500ms ease);
+ &:hover {
+ text-decoration:none;
 }
-
+}
 p {
-	margin-bottom:$default-margin;
-	display:block;
+ margin-bottom:$default-margin;
+	display: block;
 }
-
 .post-excerpt p {
-margin-bottom:0;	
+	margin-bottom: 0;
 }
-
 .caret {
-	display:none;
+	display: none;
 }
 strong {
-	font-weight:800;
+	font-weight: 800;
 }
-
 h1, h2, h3, h4, h5, h6, h7 {
-	font-family:$primary-header;
-	color:$primary-blue;	
-	margin-top:$default-margin;
-	margin-bottom: $default-margin;
+ font-family:$primary-header;
+ color:$primary-blue;
+ margin-top:$default-margin;
+ margin-bottom: $default-margin;
 }
-
 h1 {
-	font-size:1.8em;
+	font-size: 1.8em;
 }
-
 h2 {
-	font-size:1.6em;
+	font-size: 1.6em;
 }
-
 h3 {
-	font-size:1.4em;
+	font-size: 1.4em;
 }
-
 h4 {
-	font-size:1.2em;
+	font-size: 1.2em;
 }
-
 h5 {
-	font-size:1em;
+	font-size: 1em;
 }
-
 h6 {
-	font-size:.8em;
+	font-size: .8em;
 }
-
-
 .page-wrap {
-	overflow:hidden;
-	background:$primary-tan;
-	max-width:$width-lg;
-	margin:0 auto;
+	overflow: hidden;
+ background:$primary-tan;
+ max-width:$width-lg;
+	margin: 0 auto;
 }
-
-
 /* Images */
 
 .img-responsive {
-width:100%;
-height:auto;	
+	width: 100%;
+	height: auto;
 }
-
 .img-thumbnail {
-	background:#fff;
-	padding:$default-padding/5;
-	@include border-radius(5px);
-	border:1px solid #eee;
-	box-shadow:0 0 2px #999;
+	background: #fff;
+ padding:$default-padding/5;
+ @include border-radius(5px);
+	border: 1px solid #eee;
+	box-shadow: 0 0 2px #999;
 }
-	
-
 .alignleft {
-	float:left;
-	margin-right:$default-margin/2;
-	margin-bottom:$default-margin/2;
+	float: left;
+ margin-right:$default-margin/2;
+ margin-bottom:$default-margin/2;
 }
-
-
 .alignright {
-	float:right;
-	margin-left:$default-margin/2;
-	margin-bottom:$default-margin/2;
+	float: right;
+ margin-left:$default-margin/2;
+ margin-bottom:$default-margin/2;
 }
-
 .algincenter {
-	margin: 0 auto;	
-	margin-bottom:$default-margin/2;
+	margin: 0 auto;
+ margin-bottom:$default-margin/2;
 }
-
-
-
-
-
-
-
 /* Header */
 
 header, footer, section {
-	display:block;
-	width:100%;
-	margin:0 auto;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
 }
-
-
 .phone-number {
 	float: right;
 	color: #fff;
@@ -145,19 +115,15 @@ header, footer, section {
  margin:$default-margin/2 0;
 }
 }
-
-
 .main-logo-link {
-	display:block;
+	display: block;
 }
-
 .main-logo-link img {
-	max-width:270px;
-	margin-top:$default-margin;
+	max-width: 270px;
+ margin-top:$default-margin;
 }
-
 #social-media {
-	margin:$default-margin/3 0;
+ margin:$default-margin/3 0;
 }
 .social-sprite {
  @media screen and (max-width: 768px) {
@@ -169,143 +135,120 @@ header, footer, section {
 }
 }
 .page-wrap>header {
-	background:$primary-blue;
+ background:$primary-blue;
 }
-
 /* Remove padding */
 
 .site-footer, .slideshow {
-	padding:0; 
-	overflow:hidden;
+	padding: 0;
+	overflow: hidden;
 }
- 
-
-
 /* Navigation */
 .nav > li > a {
-	color:#fff;
-	font-size:1.4em;
-	font-weight:200;
-	font-family:$primary-header;
+	color: #fff;
+	font-size: 1.4em;
+	font-weight: 200;
+ font-family:$primary-header;
 }
-
 .navbar-nav {
-    float: right;
-    margin: 0;
-	
+	float: right;
+	margin: 0;
 }
-
 .navbar-collapse {
-    padding-right: 0;
-    padding-left: 0; 
-	@media screen and (max-width: $width-sm) {
-		 padding-right: $default-padding;
-    	 padding-left: $default-padding;
-	}
+	padding-right: 0;
+	padding-left: 0;
+ @media screen and (max-width: $width-sm) {
+ padding-right: $default-padding;
+ padding-left: $default-padding;
 }
-
+}
 .navbar-nav>li:last-child>a {
-	padding-right:0;
+	padding-right: 0;
 }
-
 .entry-content {
-	margin:$default-margin 0;
+ margin:$default-margin 0;
 }
-
-
 /* Slideshow */
 
 .slider-text {
-	font-size:2.5em !important;
-	color:#000;
-	font-style:italic;
-	font-weight:600;	
+	font-size: 2.5em !important;
+	color: #000;
+	font-style: italic;
+	font-weight: 600;
 }
-
 .slider-sub {
-	font-size:1.5em !important;
-	color:#000;
+	font-size: 1.5em !important;
+	color: #000;
 }
-
-
 .slideshow {
-	padding:0;
-	margin:0 auto;
-	width:100%;
-	display:block;
-	font-family:$primary-header; 	
+	padding: 0;
+	margin: 0 auto;
+	width: 100%;
+	display: block;
+ font-family:$primary-header;
 }
-
-
-
 /* Footer */
 footer {
-	background:$primary-dark-tan;
-	color:#999;
-	padding:$default-padding;
-	a {
-		color:#999;
-	}
-	.sep {
-		float:left;
-	}
-	.alignright {
-		margin-bottom:0;	
-	}
+ background:$primary-dark-tan;
+	color: #999;
+ padding:$default-padding;
+ a {
+ color:#999;
 }
-
+.sep {
+	float: left;
+}
+.alignright {
+	margin-bottom: 0;
+}
+}
 .menu-footer-nav-container #menu-footer-nav li {
-	float:left;
-	margin-left:$default-margin/2;
+	float: left;
+ margin-left:$default-margin/2;
 }
-
 * {
-  margin: 0;
+	margin: 0;
 }
 html, body {
-  height: 100%;
+	height: 100%;
 }
 .page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -100px; 
+	min-height: 100%;
+	/* equal to footer height */
+	margin-bottom: -100px;
 }
 .page-wrap:after {
-  content: "";
-  display: block;
+	content: "";
+	display: block;
 }
 .site-footer, .page-wrap:after {
-  min-height: 100px; 
+	min-height: 100px;
 }
-
-
 /* Inputs */
 
 input, textarea {
-	padding:$default-padding/3;
-	width:100%;
-	max-height:120px;
-	border:0;
-	font-size:1em;
-	border:1px solid $primary-gray;
+ padding:$default-padding/3;
+	width: 100%;
+	max-height: 120px;
+	border: 0;
+	font-size: 1em;
+ border:1px solid $primary-gray;
 }
 input[type="submit"] {
-	padding:$default-padding;
-	float:right;
-	max-width:100px;
-	margin-bottom:$default-margin;
-	font-size:1.1em;
+ padding:$default-padding;
+	float: right;
+	max-width: 100px;
+ margin-bottom:$default-margin;
+	font-size: 1.1em;
 }
 .wpcf7-quiz {
-	float:left;
-	max-width:40px;
+	float: left;
+	max-width: 40px;
 }
-
 .wpcf7-quiz-label {
-	float:left;
-	margin: $default-margin/3 $default-margin/2 0 0;
+	float: left;
+ margin: $default-margin/3 $default-margin/2 0 0;
 }
-
 .widget {
-	overflow:auto;
+	overflow: auto;
 }
