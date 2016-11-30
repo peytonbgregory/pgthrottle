@@ -4,6 +4,7 @@
 
 require 'includes/categoryposts.php';
 include 'includes/settings.php';
+include 'includes/seo.php';
 /* require 'includes/theme-update-checker.php';*/
 /*Theme Updater. Sometimes it even works!*/
 /* $MyThemeUpdateChecker = new ThemeUpdateChecker('pgthrottle', 'http://peytongregory.com/api/?action=get_metadata&pgthrottle.zip');*/
