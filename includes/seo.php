@@ -2,13 +2,12 @@
 
 // Gzip Compression
 
-if(extension_loaded("zlib") && (ini_get("output_handler") != "ob_gzhandler"))
-   add_action('wp', create_function('', '@ob_end_clean();@ini_set("zlib.output_compression", 1);'));
+
 
 // Remove Query Strings
    
-wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
-wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
+// wp_enqueue_style( $handle, $src, $deps, $ver, $media ); 
   
  // Minify 
  

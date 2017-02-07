@@ -27,18 +27,7 @@
   </div>
   <!-- .entry-content -->
   <?php endif; ?>
-  <div class="entry-meta">
-    <?php if ('post' == get_post_type()) : // Hide category and tag text for pages on Search ?>
-    <span class="cat-links"> <?php printf( __( 'Posted in %1$s'), $categories_list ); ?> </span>
-    <?php endif; // End if categories ?>
-    <?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ') );
-				if ( $tags_list ) :
-			?>
-    <span class="tags-links"> <?php printf( __( 'Tagged %1$s'), $tags_list ); ?> </span>
-    <?php endif; // End if 'post' == get_post_type() ?>
-  </div>
+
   <!-- .entry-meta --> 
 </article>
 <!-- #post-## -->

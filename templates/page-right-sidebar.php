@@ -10,7 +10,7 @@ Template Name: Page - Right Sidebar
         	<?php get_template_part ('includes/content','page'); ?>
         </div>
         <div class="col-md-4">
-            <?php get_sidebar();?>
+            <?php dynamic_sidebar ('sidebar-1');?>
         </div>
     </div>
 </div>

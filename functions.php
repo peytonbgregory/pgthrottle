@@ -32,6 +32,15 @@ function pgthrottle_widgets_init() {
 	) );
 	
 	register_sidebar( array(
+		'name'          => 'Parallax Overlay',
+		'id'            => 'parallax-overlay',
+		'before_widget' => '<aside id="%1$s" class="widget parallax-overlay-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	
+	register_sidebar( array(
 		'name'          => 'Home Left',
 		'id'            => 'home-left',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -124,6 +133,8 @@ add_theme_support( 'html5', array( 'search-form' ) );
 
 // Enable shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
+
+
 
 
 
