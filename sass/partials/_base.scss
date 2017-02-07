@@ -1,17 +1,16 @@
 /* Variables */
 
-$primary-tan: #efebe6;
-$primary-blue: #1669a0;
-$primary-dark-tan: #322f2c;
-$primary-dark: #1b1917;
-$primary-color: #322f2c;
+$color-primary: #2faaba;
+$color-secondary: #275f66;
+$color-dark: #322f2c;
+$color-light: #eee;
 $default-padding: 15px;
 $default-margin: 15px;
 $width-sm: 768px;
 $width-md: 992px;
 $width-lg: 1200px;
-$primary-font: 'Lato', sans-serif;
-$primary-header:'Oxygen', sans-serif;
+$color-primary-font: 'Lato', sans-serif;
+$color-primary-header:'Oxygen', sans-serif;
 $font-size: 14px;
 
 
@@ -77,6 +76,16 @@ $font-size: 14px;
     }
 }
 
+
+
+
+/* Required By WordPress */
+.wp-caption {display:block;}
+.wp-caption-text {display:block;}
+.sticky {display:block;}
+.gallery-caption {display:block;}
+.bypostauthor {display:block;}
+.aligncenter {display:block; margin:0 auto;}
 
 
 

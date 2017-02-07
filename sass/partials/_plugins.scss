@@ -6,3 +6,24 @@
 	max-width: 100%;
 	display: block !important;
 }  
+
+.widget_categoryposts ul {
+	list-style: none;
+	margin: 0;
+	padding:0;
+	li {
+		margin: 0 0 15px 0;
+		.post-title {
+			font-size:1.2em;
+		}
+	}
+}
+
+.wpcf7-quiz {
+	float: left;
+	max-width: 40px;
+}
+.wpcf7-quiz-label {
+	float: left;
+ margin: $default-margin/3 $default-margin/2 0 0;
+}

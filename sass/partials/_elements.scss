@@ -3,15 +3,15 @@
 
 
 .btn-default {
-	background: $primary-blue;
+	background: $color-secondary;
 	color:#fff;
 	border-radius:$default-padding/3;
 	border: 1px solid;
 	padding:$default-padding/2;
-	border-color:darken($primary-blue, 5%);
+	border-color:darken($color-secondary, 5%);
 	display:inline-block;
 	@include transition(500ms ease);
 	&:hover {
-		background:darken($primary-blue, 5%);
+		background:darken($color-secondary, 5%);
 	}
 }
