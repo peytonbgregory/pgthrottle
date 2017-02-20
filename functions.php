@@ -2,7 +2,6 @@
 /*Theme includes */
 
 
-require 'includes/categoryposts.php';
 include 'includes/settings.php';
 include 'includes/seo.php';
 /* require 'includes/theme-update-checker.php';*/
