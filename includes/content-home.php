@@ -19,7 +19,7 @@
   <?php endif; ?>
   <div class="entry-meta">
     <?php if ('post' == get_post_type()) : // Hide category and tag text for pages on Search ?>
-    <span class="cat-links"> <?php printf( __( 'Posted in %1$s'), $categories_list ); ?> </span>
+    <span class="cat-links"> <?php // printf( __( 'Posted in %1$s'), $categories_list ); ?> </span>
     <?php endif; // End if categories ?>
     <?php
 				/* translators: used between list items, there is a space after the comma */
