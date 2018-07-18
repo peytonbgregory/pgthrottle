@@ -1,2 +1,1 @@
-# pgthrottle
-A WordPress Theme
+# pgthrottleBootstrap 4.1 WordPress Theme

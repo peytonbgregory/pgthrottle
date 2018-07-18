@@ -1,78 +1,1 @@
-<?php /* * The Header for our theme. */?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-control" content="public">
-    <title><?php wp_title(); ?></title>
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo esc_url( get_template_directory_uri() );?>/stylesheets/screen.css" rel="stylesheet" type="text/css" />
-    <!--[if IE]>
-        <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <?php wp_head(); ?>
-</head>
-<?php $options=get_option( 'theme_settings' ); ?>
-<?php flush(); ?><body <?php body_class(); ?>>
-<?php do_action( 'before' ); ?>
-<div class="page-wrap">
-    
-   	 <div class="container-fluid header-container">
-    	<div class="row">
-    <header>
-    	<div class="container">
-       	
-        	<div class="row"> 
-                <div class="col-md-2 col-sm-2 col-xs-12"> 
-                    <a class="main-logo-link" href="<?php echo home_url(); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-                        <img src="<?php echo $options['main_logo']; ?>" class="img-responsive main-logo" width="<?php echo $options['main_logo_width']; ?>" />
-                    </a>
-                </div>
-                <div class="col-md-10 col-sm-10 col-xs-12">
-                	<div class="row">
-                <div class="col-md-12 col-xs-12">
-                <a class="phone-number" href="tel:<?php echo $options['phone_number_url']; ?>"><?php echo $options['phone_number']; ?></a>
-                	
-				</div>
-					</div>
-                  <div class="row">
-                <div class="col-md-12 col-xs-12">
-                  <?php get_template_part ('includes/social'); ?> 
-					  </div>
-					</div>
-                   
-                    
-                    
-                </div>
-        	</div>
-        	<div class="row">
-                        <div class="col-md-12"> 
-                            <div class="navbar">
-                                <?php
-                                        wp_nav_menu( array(
-                                        'menu'              => 'header-menu',
-                                        'theme_location'    => 'header-menu',
-                                        'depth'             => 2,
-                                        'container'         => 'div',
-                                        'container_class'   => 'collapse ',
-                                        'container_id'      => 'bs-example-navbar-collapse-1',
-                                        'menu_class'        => 'nav navbar-nav',
-                                        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                                        'walker'            => new wp_bootstrap_navwalker())
-                                    );
-                                ?>
-                                <?php // get_search_form (); ?>
-                            </div>
-                        </div>
-                    </div>   	
-        </div>
-    </header>
-		</div>
-	</div>
-	
+<!DOCTYPE html><html <?php language_attributes(); ?>>	<head>		<meta charset="<?php bloginfo( 'charset' ); ?>">		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		<link rel="profile" href="http://gmpg.org/xfn/11">		<?php wp_head(); ?>	</head><body <?php body_class(); ?>><div class="text-center text-sm-left" id="wrap">	<div id="main">		<header id="site-header">			<div class="container">				<div class="row flex-row justify-content-between align-items-center">					<div class="col-12 col-sm-4 text-center text-sm-left">						<a href="<?php echo get_bloginfo('url'); ?>" target="_self" title="<?php echo get_bloginfo('site_title'); ?>"><h1><?php bloginfo('site_title'); ?></h1></a>					</div>						<div class="col-12 col-sm-8 text-sm-right text-center">						<a href="tel:55555555" class="btn btn-light">555-555-5555</a>					</div>				</div> <!-- row -->			</div> <!-- top-nav -->		</header>		<section class="container-fluid sticky-top border-top border-bottom navbar-dark bg-info <?php if(!is_page('home')) : echo 'mb-3'; endif ?>">			<div class="row">				<div class="container">					<div class="row">						<div class="col">							<nav class="navbar navbar-expand-lg px-0" role="navigation">								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pg-navbar-collapse" aria-controls="pg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">									<span class="navbar-toggler-icon"></span>								</button>								<div class="d-flex order-1 order-lg-2">									<?php get_search_form(); ?>								</div> 								<?php wp_nav_menu( array(									'theme_location'    => 'primary-menu',									'depth'             => 2,									'container'         => 'div',									'container_class'   => 'collapse navbar-collapse order-2 order-lg-1',									'container_id'      => 'pg-navbar-collapse',									'menu_class'        => 'nav navbar-nav',									'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',									'walker'            => new WP_Bootstrap_Navwalker(),								) ); ?>								</nav>						</div>					</div>				</div>			</div>		</section>		<div id="content"> 

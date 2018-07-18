@@ -1,17 +1,1 @@
-<?php
-/*
-Main Template File
-*/
-?>
-<?php get_header();?>
-<div class="container page-right-sidebar-wrap">
-	<div class="row">
-        <div class="col-md-8">
-        	<?php get_template_part ('includes/content','category'); ?> 
-        </div>
-        <div class="col-md-4">
-            <?php dynamic_sidebar ('sidebar-1');?>
-        </div>
-    </div>
-</div>
-<?php get_footer();?>
+<?php get_header(); ?><?php // Shows slideshow widget if the page title is Home and slideshow widget is active.if (is_page('home')) { 	if (is_active_sidebar('slideshow-1')) : 		echo '<section class="w-100 bg-light border-bottom mb-3">';			dynamic_sidebar('slideshow'); 		echo '</section>'; 	endif; } ?><div class="container">	<div class="row">		<div class="col">            <div id="primary" class="content-area">				<?php 				if ( is_search() ) : 					echo '<h1 class="entry-title text-muted mb-3 pb-1 border-bottom"><span class="small text-info">Search Results for: </span>' . get_search_query() . '</h1>'; 				endif; ?>				                <main id="main" class="site-main" role="main">                <?php                if ( have_posts() ) :    					while ( have_posts() ) : the_post();													if ( is_search() ) : ?> 							<div class="mb-3 card">								<div class="card-header">									<h3 class="entry-title text-primary mb-0"><a href="<?php the_permalink();?>" target="_self" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>								</div>								<div class="card-body bg-light">									<h5 class="text-muted">Description</h5>									<div class="entry-content border-bottom mb-1">										<?php the_excerpt();?>									</div>									<a href="<?php the_permalink();?>" class="btn btn-secondary text-capitalize btn-sm">View <?php echo get_post_type(); ?></a>								</div>							</div>										<?php  // is search						  elseif ( is_404() ) : ?>						  	<h1 class="text-info">Can't find the page you're looking for?</h1>									<?php  // is 404 														  else : // if not 404 or search show this							if (!is_page('home')) { // dont show title if on home page								the_title('<h1 class="entry-title text-info mb-3">','</h1>');							}						   the_content();						endif;					                                          endwhile;										if ( is_search() ) : posts_nav_link( ' &#183; ', 'previous page', 'next page' ); endif; 										 else : endif; ?>                </main><!-- #main -->            </div><!-- #primary -->        </div>        <?php get_sidebar();?>    </div></div><?php if (is_page('home')) : ?><section class="w-100 bg-light border-top border-primary border-bottom py-5">	<div class="container text-center py-5">		<div class="row flex-row">			<div class="col-12">				<h2 class="text-primary my-3">Search Products <span class="text-muted small">Enter a Part Number</span></h2>				<?php				if ( shortcode_exists('wcas-search-form') ) :					echo do_shortcode('[wcas-search-form]'); 				else : 					get_search_form();				endif;				do_action('powergenics_product_cat'); ?>			</div>		</div>	</div></section><? endif; ?><?php get_footer(); ?>
