@@ -1,1 +1,0 @@
-Go to Appearance>Theme Settigns to customize the theme. The theme includes 3 footers widgets and 3 widgets on the home page template. 
