@@ -1,1 +1,0 @@
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?><div class="col-12 col-sm-4 col-md-3 order-2 sidebar">	<aside id="secondary" class="widget-area" role="complementary">			<?php dynamic_sidebar( 'sidebar-1' ); ?>		</aside><!-- #secondary --></div><?php endif; ?>
