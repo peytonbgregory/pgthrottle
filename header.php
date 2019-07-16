@@ -78,5 +78,36 @@
 		</nav>
 
 	</header>
+    <?php if(is_active_sidebar('slideshow-1')) { ?>
+        <section class="w-100 slideshow-widget-wrapper">
+            <?php dynamic_sidebar('slideshow-1'); ?>
+        </section>
+    <?php } ?>
+    <!-- optional header banner with feature image -->
+    <?php
+    
+    $page_id = get_queried_object_id();
+    if ( has_post_thumbnail( $page_id ) ) :
+        $image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), 'wide-banner' );
+        $image = $image_array[0]; ?>
+
+            <section class="feature-header mb-5" style="background:url('<?php echo $image; ?>')">
+               <div class="container py-5">
+                    <div class="row">
+                        <div class="col py-5">
+                           <h2 class="page-title display-3 m-0"><?php echo get_the_title($post->ID); ?></h2> 
+                        </div>
+                    </div>
+
+               </div>
+            </section>
+
+        <?php
+    else :
+
+    endif;
+    // echo $image;
+
+    ?>  
 	
-<div class="<?php echo $pgcontentclass ?>" id="site-content"> 
+<div class="<?php echo $pgcontentclass ?> py-3 mb-3" id="site-content"> 

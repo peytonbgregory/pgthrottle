@@ -12,19 +12,19 @@
 
 					<div class="row">
 						<?php if(is_active_sidebar('footer-left')) {
-						echo '<div class="col-12 col-sm">';
+						echo '<div class="col-12 col-sm-12 col-md-4">';
 							dynamic_sidebar ('footer-left'); 
 						echo '</div>';
 						} ?>
 
 						<?php if(is_active_sidebar('footer-middle')) {
-						echo '<div class="col-12 col-sm">';
+						echo '<div class="col-12 col-sm-12 col-md-4">';
 							dynamic_sidebar ('footer-middle'); 
 						echo '</div>';
 						} ?>
 
 						<?php if(is_active_sidebar('footer-right')) {
-						echo '<div class="col-12 col-sm">';
+						echo '<div class="col-12 col-sm-12 col-md-4">';
 							dynamic_sidebar ('footer-right'); 
 						echo '</div>';
 						} ?>

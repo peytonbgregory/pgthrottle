@@ -34,7 +34,8 @@ if ( ! file_exists( get_template_directory() . '/includes/social-widget.php' ) )
 // Load CSS and JS files
 add_action( 'wp_enqueue_scripts', 'pgthrottle_scripts', 1 );
 function pgthrottle_scripts() {
-	wp_register_style('bootstrap-css' , THEME_DIR . '/css/screen.css','','', 'all');
+	// wp_register_style('bootstrap-css' , THEME_DIR . '/css/screen.css','','', 'all');
+    wp_register_style('bootstrap-css' , THEME_DIR . '/css/custom-css-bootstrap.css','','', 'all');
 	wp_register_style('pgthrottle-style' , THEME_DIR . '/style.css','','', 'all');
 	wp_register_style('font-awesome-brands', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css','','', 'all');
 	 
@@ -59,7 +60,7 @@ if ( ! function_exists( 'pgthrottle_setup' ) ) :
 		);
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails' ); 
+		add_theme_support( 'post-thumbnails', array('post','page') ); 
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_theme_support( 'woocommerce' );
 		add_filter('widget_text', 'do_shortcode');
@@ -72,6 +73,8 @@ if ( ! function_exists( 'pgthrottle_setup' ) ) :
 			'header-text' => array( 'site-title', 'site-description' ),
 		);
 		add_theme_support( 'custom-logo', $defaults ); 
+        add_image_size( 'wide-banner', 1200, 300, true );
+        add_image_size( 'large-square', 250, 250, true );
 			}
 
 endif;
@@ -139,6 +142,15 @@ function pgthrottle_widgets_init() {
     register_sidebar( array(
 		'name'          => 'Footer Left', 
 		'id'            => 'footer-left',
+		'description'   => 'Add widgets to the left side of the purple footer on every page.',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title text-white">',
+		'after_title'   => '</h3>',
+	) );
+     register_sidebar( array(
+		'name'          => 'Footer Middle', 
+		'id'            => 'footer-middle',
 		'description'   => 'Add widgets to the left side of the purple footer on every page.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
