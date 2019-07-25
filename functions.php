@@ -75,6 +75,7 @@ if ( ! function_exists( 'pgthrottle_setup' ) ) :
 		add_theme_support( 'custom-logo', $defaults ); 
         add_image_size( 'wide-banner', 1200, 300, true );
         add_image_size( 'large-square', 250, 250, true );
+         add_image_size( 'large-wide', 350, 250, true );
 			}
 
 endif;
@@ -397,6 +398,21 @@ add_filter('developer_credit', 'pgthrottle_developer_credits');
 //
 // echo apply_filters('developer_credit', '');
 
+//Enable WooCommerce
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section class="container" id="main">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</section>';
+}
 
 
 add_action('wp_head', 'pgthrottle_header_script');
