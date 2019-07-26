@@ -111,7 +111,7 @@ function pgthrottle_sitetitle_header() {
 	global $pglogo;
 			echo '<a class="navbar-brand" target="_self" href="'. home_url() .'" rel="home" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .' Home Page">';
 			if ( has_custom_logo() ) { ?>
-					<img class="img-responsive site-logo" src="<?php echo esc_url( $pglogo[0] ) ?>">
+					<img class="img-responsive img-fluid site-logo" src="<?php echo esc_url( $pglogo[0] ) ?>">
 			<?php } else { ?>
 					<h1 class="site-title"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></h1>
 			<?php } 
