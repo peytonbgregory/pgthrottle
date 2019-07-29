@@ -47,6 +47,19 @@
 
 		</footer><!-- #colophon -->
 
+		<script type="text/javascript">
+			// ADA Compliance
+			jQuery('a').filter(function() {
+		    return this.hostname && this.hostname !== location.hostname;
+		  }).click(function(e) {
+		       if(!confirm("You are about to proceed to an external website."))
+		       {
+			    // if user clicks 'no' then dont proceed to link.
+			    e.preventDefault();
+		       };
+		  });
+		</script> 
+
 		<?php wp_footer(); ?>
 
 	</body>
