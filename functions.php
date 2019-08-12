@@ -35,7 +35,14 @@ if ( ! file_exists( get_template_directory() . '/includes/social-widget.php' ) )
 add_action( 'wp_enqueue_scripts', 'pgthrottle_scripts', 1 );
 function pgthrottle_scripts() {
 	// wp_register_style('bootstrap-css' , THEME_DIR . '/css/screen.css','','', 'all');
+   
+    if ( file_exists( get_template_directory() . '/css/custom-css-bootstrap.css' ) ) {
+    
     wp_register_style('bootstrap-css' , THEME_DIR . '/css/custom-css-bootstrap.css','','', 'all');
+        
+    } else {
+        wp_register_style('bootstrap-css' , THEME_DIR . '/css/screen.css','','', 'all');
+    }
 	wp_register_style('pgthrottle-style' , THEME_DIR . '/style.css','','', 'all');
 	wp_register_style('font-awesome-brands', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css','','', 'all');
 	 
@@ -88,6 +95,7 @@ $pgcustom_logo_id = get_theme_mod( 'custom_logo' );
 $pglogo = wp_get_attachment_image_src( $pgcustom_logo_id , 'full' );
 $pgbodyclass = get_theme_mod( 'pgthrottle_body_class_textbox' );
 $pgnoticeclass = get_theme_mod( 'pgthrottle_notice_class_textbox' );
+$pgsearchclass = get_theme_mod( 'pgthrottle_search_class_textbox' );
 $pgresourceclass = get_theme_mod( 'pgthrottle_resource_class_textbox' );
 $pgnavclass = get_theme_mod( 'pgthrottle_nav_class_textbox' );
 $pgheaderclass = get_theme_mod( 'pgthrottle_header_class_textbox' );
@@ -111,10 +119,10 @@ function pgthrottle_sitetitle_header() {
 	global $pglogo;
 			echo '<a class="navbar-brand" target="_self" href="'. home_url() .'" rel="home" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .' Home Page">';
 			if ( has_custom_logo() ) { ?>
-					<img class="img-responsive img-fluid site-logo" src="<?php echo esc_url( $pglogo[0] ) ?>">
-			<?php } else { ?>
-					<h1 class="site-title"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></h1>
-			<?php } 
+<img class="img-responsive img-fluid site-logo" src="<?php echo esc_url( $pglogo[0] ) ?>">
+<?php } else { ?>
+<h1 class="site-title"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></h1>
+<?php } 
 			echo '</a>';
 }
 add_filter('pgthrottile_sitetitle','pgthrottle_sitetitle_header');
@@ -246,7 +254,7 @@ function pgthrottle_customize_register( $wp_customize ) {
 		
 	) );
 	
-	// Site NoticeClass
+	// Site Notice Class
 	$wp_customize->add_setting( 'pgthrottle_notice_class_textbox', array(
 	  'capability' => 'edit_theme_options',
 	  'default' => 'p-2 h4 m-0 bg-secondary text-white text-center header-alert',
@@ -259,8 +267,22 @@ function pgthrottle_customize_register( $wp_customize ) {
 	  'label' => __( 'Notice Class' ),
 	  'description' => __( 'Customize the header alert class' ),
 	) );
+    
+    	// Site Search Class
+	$wp_customize->add_setting( 'pgthrottle_search_class_textbox', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => 'card bg-secondary border-primary text-light p-1',
+	  'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'pgthrottle_search_class_textbox', array(
+	  'type' => 'text',
+	  'section' => 'title_tagline', // // Add a default or your own section
+	  'label' => __( 'Seach Box Class' ),
+	  'description' => __( 'Customize the search box class' ),
+	) );
 	
-		// Site NoticeClass
+		// Site Resource Class
 	$wp_customize->add_setting( 'pgthrottle_resource_class_textbox', array(
 	  'capability' => 'edit_theme_options',
 	  'default' => '',
@@ -388,7 +410,7 @@ function pgthrottle_pre_user_query($user_search) {
 
 // Footer Credits
 function pgthrottle_developer_credits($newlink) {
-	$newlink = "<a href='http://www.peytongregory.com/' target='_blank' title='Site Designed by Peyton Gregory'>Site Design</a>";
+	$newlink = "<a href='http://www.peytongregory.com/' target='_blank' title='Website Designed by Peyton Gregory'>Site Design</a>";
 	return $newlink;
 }
 add_filter('developer_credit', 'pgthrottle_developer_credits');
