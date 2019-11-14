@@ -28,7 +28,7 @@ require_once get_template_directory() . '/includes/post-type-work.php';
 // Load CSS and JS files
 add_action( 'wp_enqueue_scripts', 'pgthrottle_scripts', 1 );
 function pgthrottle_scripts() {
-    wp_register_style('pgthrottle-css' , THEME_DIR . '/css/app.css','','', 'all');
+    wp_register_style('pgthrottle-css' , THEME_DIR . '/css/pgthrottle.min.css','','', 'all');
     wp_register_style('theme-css' , THEME_DIR . '/style.css','','', 'all');
     wp_register_style('google-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700,800&display=swap','','', 'all');	 
     

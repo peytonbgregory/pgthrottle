@@ -1,264 +1,45 @@
- // Variables
- //
- // Variables should follow the `$component-state-property-size` formula for
- // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+@import "wordpress"; // Default WordPress CSS classes
+@import "custom"; // Custom Bootstrap variables
 
+@import "~animate.css/source/base"; // Enable Animate.css Classes
+//@import "~font-awesome/scss/font-awesome"; // Enable Font Awesome Icons
 
- //
- // Color system
- // 
- $font-family-sans-serif: 'Poppins',
- sans-serif;
- $white: #fff !default;
- $gray-100: #fbfafa;
- $gray-200: #e9ecef !default;
- $gray-300: #dee2e6 !default;
- $gray-400: #ced4da !default;
- $gray-500: #adb5bd !default;
- $gray-600: #808084;
- $gray-700: #495057 !default;
- $gray-800: #606068;
- $gray-900: #212529 !default;
- $black: #000 !default;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
 
- $grays: () !default;
- // stylelint-disable-next-line scss/dollar-variable-default
- $grays: map-merge(("100": $gray-100,
-         "200": $gray-200,
-         "300": $gray-300,
-         "400": $gray-400,
-         "500": $gray-500,
-         "600": $gray-600,
-         "700": $gray-700,
-         "800": $gray-800,
-         "900": $gray-900),
-     $grays);
-
-
- $blue: #00bce4;
- $indigo: #501EAB;
- $purple: #6f42c1 !default;
- $pink: #e83e8c !default;
- $red: #dc3545 !default;
- $orange: #FA8E16;
- $yellow: #fab916;
- $green: #c1d72e;
- $teal: #20c997 !default;
- $cyan: #17a2b8 !default;
-
- $colors: () !default;
- // stylelint-disable-next-line scss/dollar-variable-default
- $colors: map-merge(("blue": $blue,
-         "indigo": $indigo,
-         "purple": $purple,
-         "pink": $pink,
-         "red": $red,
-         "orange": $orange,
-         "yellow": $yellow,
-         "green": $green,
-         "teal": $teal,
-         "cyan": $cyan,
-         "white": $white,
-         "gray": $gray-600,
-         "gray-dark": $gray-800),
-     $colors);
-
- $primary: $blue !default;
- $secondary: $gray-600 !default;
- $success: $green !default;
- $info: $cyan !default;
- $warning: $yellow !default;
- $danger: $red !default;
- $light: $gray-100 !default;
- $dark: $gray-800 !default;
-
- $theme-colors: () !default;
- // stylelint-disable-next-line scss/dollar-variable-default
- $theme-colors: map-merge(("primary": $primary,
-         "secondary": $secondary,
-         "success": $success,
-         "info": $info,
-         "warning": $warning,
-         "danger": $danger,
-         "light": $light,
-         "dark": $dark),
-     $theme-colors);
-
- @import "node_modules/bootstrap/scss/functions";
- @import "node_modules/bootstrap/scss/variables";
- @import "node_modules/bootstrap/scss/mixins";
-
- // Optional
- @import "node_modules/bootstrap/scss/reboot";
- @import "node_modules/bootstrap/scss/type";
- @import "node_modules/bootstrap/scss/images";
- @import "node_modules/bootstrap/scss/code";
- @import "node_modules/bootstrap/scss/grid";
- @import "node_modules/animate.css/source/base";
- @import "node_modules/font-awesome/scss/font-awesome";
-
- /* =WordPress Core
--------------------------------------------------------------- */
- .alignnone {
-     margin: 5px 20px 20px 0;
- }
-
- .aligncenter,
- div.aligncenter {
-     display: block;
-     margin: 5px auto 5px auto;
- }
-
- .alignright {
-     float: right;
-     margin: 5px 0 20px 20px;
- }
-
- .alignleft {
-     float: left;
-     margin: 5px 20px 20px 0;
- }
-
- a img.alignright {
-     float: right;
-     margin: 5px 0 20px 20px;
- }
-
- a img.alignnone {
-     margin: 5px 20px 20px 0;
- }
-
- a img.alignleft {
-     float: left;
-     margin: 5px 20px 20px 0;
- }
-
- a img.aligncenter {
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
- }
-
- .wp-caption {
-     background: #fff;
-     border: 1px solid #f0f0f0;
-     max-width: 96%;
-     /* Image does not overflow the content area */
-     padding: 5px 3px 10px;
-     text-align: center;
- }
-
- .wp-caption.alignnone {
-     margin: 5px 20px 20px 0;
- }
-
- .wp-caption.alignleft {
-     margin: 5px 20px 20px 0;
- }
-
- .wp-caption.alignright {
-     margin: 5px 0 20px 20px;
- }
-
- .wp-caption img {
-     border: 0 none;
-     height: auto;
-     margin: 0;
-     max-width: 98.5%;
-     padding: 0;
-     width: auto;
- }
-
- .wp-caption p.wp-caption-text {
-     font-size: 11px;
-     line-height: 17px;
-     margin: 0;
-     padding: 0 4px 5px;
- }
-
- /* Text meant only for screen readers. */
- .screen-reader-text {
-     border: 0;
-     clip: rect(1px, 1px, 1px, 1px);
-     clip-path: inset(50%);
-     height: 1px;
-     margin: -1px;
-     overflow: hidden;
-     padding: 0;
-     position: absolute !important;
-     width: 1px;
-     word-wrap: normal !important;
-     /* Many screen reader and browser combinations announce broken words as they would appear visually. */
- }
-
- .screen-reader-text:focus {
-     background-color: #eee;
-     clip: auto !important;
-     clip-path: none;
-     color: #444;
-     display: block;
-     font-size: 1em;
-     height: auto;
-     left: 5px;
-     line-height: normal;
-     padding: 15px 23px 14px;
-     text-decoration: none;
-     top: 5px;
-     width: auto;
-     z-index: 100000;
-     /* Above WP toolbar. */
- }
-
- // PGThrottle Theme 
-
- html,
- body {
-     height: 100%;
- }
-
- body {
-     display: flex;
-     flex-direction: column;
- }
-
- #site-content {
-     flex: 1 0 auto;
- }
-
- #site-footer {
-     flex-shrink: 0;
- }
-
- figure,
- img {
-     max-width: 100%;
- }
-
- #map {
-     width: 100%;
-     height: 400px;
-     max-height: 80vh;
-     min-height: 50vh;
-
- }
-
- section.feature-header {
-     background-repeat: no-repeat !important;
-     background-size: cover !important;
-     background-position: center;
-     position: relative;
-
-     &:before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         width: 100%;
-         height: 100%;
-         background: $blue;
-         mix-blend-mode: multiply;
-         opacity: 0.75;
-     }
- }
+@import "theme"; // Styles spesific to the client/theme
