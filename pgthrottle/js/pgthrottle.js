@@ -1,4 +1,4 @@
-/*! pgthrottle - v1.0.0 - 2019-11-13 */var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
+/*! pgthrottle - v3.0.0 - 2019-11-13 */var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
 
 const timeoutDuration = function () {
   const longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
