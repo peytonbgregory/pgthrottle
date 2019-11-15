@@ -17,7 +17,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'css/pgthrottle.css',
+                            name: 'css/pgthrottle.min.css',
                         }
 					},
                     {
