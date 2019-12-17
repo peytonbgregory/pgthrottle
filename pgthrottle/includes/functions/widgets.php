@@ -26,7 +26,7 @@ function pgthrottle_widgets_init() {
 		'description'   => 'Add widgets to the left side of the purple footer on every page.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title text-white">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
      register_sidebar( array(
@@ -35,7 +35,7 @@ function pgthrottle_widgets_init() {
 		'description'   => 'Add widgets to the left side of the purple footer on every page.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title text-white">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
@@ -44,7 +44,7 @@ function pgthrottle_widgets_init() {
 		'description'   => 'Add widgets to the  right side of the purple footer on every page.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title text-white">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
@@ -53,7 +53,7 @@ function pgthrottle_widgets_init() {
 		'description'   => 'Add widgets to top of archive pages.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title text-white">',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 }
