@@ -69,7 +69,7 @@ if ( ! file_exists( FUNCT_DIR . 'class-wp-bootstrap-navwalker.php' ) ) {
 }
 
 // Enable WooCommerce Theme Support IF WooCommerce Plugin is active
-if ( class_exists('woocommerce') ) {
+if ( is_plugin_active('woocommerce') ) {
     require_once FUNCT_DIR . 'woocommerce.php';
 }
 
@@ -93,7 +93,7 @@ include_once FUNCT_DIR . 'widgets.php';
 include_once FUNCT_DIR . 'customizer.php';
 
 // Gravity Forms Custom Functions | WP Dashboard > Gravity Forms
-include_once FUNCT_DIR . 'customizer.php';
+include_once FUNCT_DIR . 'gravityforms.php';
 
 // Optimization
 include_once FUNCT_DIR . 'optimization.php';
