@@ -32,7 +32,7 @@ if ( ! function_exists( 'pgthrottle_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails', array('post','page') );
-        add_theme_support( 'post-thumbnails' ); 
+                add_theme_support( 'post-thumbnails' ); 
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		
 		add_filter('widget_text', 'do_shortcode');
@@ -53,6 +53,21 @@ if ( ! function_exists( 'pgthrottle_setup' ) ) :
 endif;
 
 add_action( 'after_setup_theme', 'pgthrottle_setup' );
+
+
+// Open Links with http & https in New Window
+function pg_link_window() { ?>
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $("#site-content a[href^='http://']").attr("target", "_blank");
+            $("#site-content a[href^='https://']").attr("target", "_blank");
+        });
+    })(jQuery);
+</script>
+<?php }
+add_action('wp_footer', 'pg_link_window', 10);
+
 
 // Core Theme Functions - Required
 if ( ! file_exists( FUNCT_DIR . 'core.php' ) ) {
